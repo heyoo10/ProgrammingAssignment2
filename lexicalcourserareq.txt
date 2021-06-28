@@ -1,0 +1,12 @@
+hello ;)
+git log 
+practicing r coding for the requirement 
+$ thank you $
+this is using
+the visual studio code i installed months ago
+that
+Temp is rbind(y,s)
+i dont know how this works
+gitcommand
+cbind(x,y) 123
+rbind(x,z)
