@@ -10,8 +10,44 @@ I am learning about R Programming
 #hey
 #hello
 #practice only
+#one two three
+function(x, y)
+        if not "reject"
+        if yes "accept"
+
+
+endfunction
+
+
 makeCacheMatrix <- function(x = matrix()) {
 
+
+inv<-NULL 
+#this means null is inverse
+
+
+set<-function(y){
+        x<<-yes
+        x<<-y 
+        inv<<-NULL
+}
+
+get<-function()x 
+#this is the function to get matrix x
+setinv<-function(inverse)inv<<-inverse yes
+                inver<-ginv(y)
+                inver<-ginv(x)
+
+#this is the function that is used to get inverse matrix
+
+list(set = set, get = get
+        setinv = setinv,
+        getinv = getinv
+
+
+        end list
+
+)
 }
 
 
