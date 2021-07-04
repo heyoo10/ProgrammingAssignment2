@@ -43,7 +43,7 @@ cachemean <- function(x, ...) {
 }
 
 
-makeCacheMatrix <- function(x = matrix()) {
+makeCacheMatrix <- function(x = matrix(sample(2:200,9),2,2)) {
   inv <- NULL
   set <- function(y){
     x <<- y
