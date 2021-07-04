@@ -12,6 +12,9 @@ I am learning about R Programming
 #practice only
 #one two three
 
+knitr::opts_chunk$set(echo = TRUE, results = "asis")
+
+
 makeVector <- function(x = numeric()) {
         m <- NULL
         set <- function(y) {
