@@ -11,94 +11,33 @@ I am learning about R Programming
 #hello
 #practice only
 #one two three
-function(x, y)
-        if not "reject"
-        if yes "accept"
 
-
-endfunction
-
-
-makeCacheMatrix <- function(x = matrix()) {
-
-
-inv<-NULL 
-#this means null is inverse
-
-
-set<-function(y){
-        x<<-yes
-        x<<-y 
-        inv<<-NULL
+makeVector <- function(x = numeric()) {
+        m <- NULL
+        set <- function(y) {
+                x <<- y
+                m <<- NULL
+        }
+        get <- function() x
+        setmean <- function(mean) m <<- mean
+        getmean <- function() m
+        list(set = set, get = get,
+             setmean = setmean,
+             getmean = getmean)
 }
 
-get<-function()x 
-#this is the function to get matrix x
-setinv<-function(inverse)inv<<-inverse yes
-                inver<-ginv(y)
-                inver<-ginv(x)
 
-#this is the function that is used to get inverse matrix
-
-list(set = set, get = get
-        setinv = setinv,
-        getinv = getinv
-
-
-        end list
-
-)
+cachemean <- function(x, ...) {
+        m <- x$getmean()
+        if(!is.null(m)) {
+                message("getting cached data")
+                return(m)
+        }
+        data <- x$get()
+        m <- mean(data, ...)
+        x$setmean(m)
+        m
 }
-
-const Twitter = require('twitter');
-const randomReply = require('./random-reply');
-const botConfig = require('./bot-config');
-
-const client = new Twitter({
-    consumer_key: botConfig.client.consumer_key,
-    consumer_secret: botConfig.client.consumer_secret,
-    access_token_key: botConfig.client.access_token_key,
-    access_token_secret: botConfig.client.access_token_secret
-});
-
-// Config the stream to filter the tweets with our key words
-const stream = client.stream('statuses/filter', {track: botConfig.track});
-
-// Each time the stream get a tweet, reply it with a random phrase
-stream.on('data', (tweet) => {
-
-    // dont allow reply himself
-    if (tweet.user.screen_name === botConfig.userName) {
-        return;
-    }
-    
-    // Create the new random reply
-    var newReply = {
-        status: randomReply(tweet, botConfig.replies),
-        in_reply_to_status_id: tweet.id_str
-    };
-
-    // Send the new reply
-    client.post('statuses/update', newReply, (err, twt, res) => {
-        if (err) return console.log(err);
-        console.log(`Tweet ID: ${tweet.id_str} Reply! - "${tweet.text}"`);
-    });
-
-});
-
-stream.on('error', (err) => {
-    console.log(err);
-});
-
-console.log('ready when your are ...');
-## Write a short comment describing this function
-
-cacheSolve <- function(x, ...) {
-        ## Return a matrix that is the inverse of 'x'
-}
-
-endfunction
-end
 
 
 makeCacheMatrix <- function(x = matrix()) {
